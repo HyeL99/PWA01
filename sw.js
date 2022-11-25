@@ -10,8 +10,8 @@ var filesToCache = [
   '/',
   'css/main.css',
   'assets/img/logoClock.png',
-  'assets/img/dot.png.png',
-  'assets/img/iconCalendar.svg.png',
+  'assets/img/dot.png',
+  'assets/img/iconCalendar.svg',
   'assets/img/diaryPen.png'
 ];
  
