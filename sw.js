@@ -1,12 +1,12 @@
 // var CACHE_NAME = 'pwa-offline-v1';  //Cache Storage에 저장될 이름
 var CACHE_NAME = 'pwa-offline-v2';
 
-// var filesToCache = [  //캐싱할 웹자원(이미지, css, html 등...) 목록을 배열로 설정
+// var FILES_TO_CACHE = [  //캐싱할 웹자원(이미지, css, html 등...) 목록을 배열로 설정
 //   '/',
 //   'assets/img/logoClock.png'
 // ];
 
-var filesToCache = [
+var FILES_TO_CACHE = [
   "index.html",
   "css/main.css",
   "assets/img/diaryPen.png",
@@ -49,7 +49,7 @@ self.addEventListener("install",function(event){
     // CACHE_NAME 변수 이름으로 캐시 스토리지에 캐시 생성 -> pwa파일 나옴
     // caches - 캐시스토리지에 접근할 수 있는 예약어
     .then(function(cache){ // 캐싱이 성공했을 때(위의 결과물 캐시파일)
-      return cache.addAll(filesToCache);  //위에서 나온 pwa파일에 웹자원 추가
+      return cache.addAll(FILES_TO_CACHE);  //위에서 나온 pwa파일에 웹자원 추가
     })
     .catch(function(error){
       return console.log("에러발생\n",error);
@@ -60,6 +60,10 @@ self.addEventListener("install",function(event){
 //서비스워커 설치 후 네트워크 요청이 있을 때는 캐시로 돌려줌(캐시된 자원으로)
 self.addEventListener('fetch',function(event){
   console.log('serviceWorker fetch');
+  if (event.request.mode !== 'navigate') { // page navigation 제외
+    return;
+  }
+  
   event.respondWith( // 결과에 대한 응답을 알려주는 API
     caches.match(event.request)  // caches.match() - 네트워크에 요청에 해당하는 캐싱을 반환
     .then(function(response){
