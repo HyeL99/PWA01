@@ -7,13 +7,40 @@ var CACHE_NAME = 'pwa-offline-v2';
 // ];
 
 var filesToCache = [
-  '/',
-  'css/main.css',
-  'assets/img/logoClock.png',
-  'assets/img/dot.png',
-  'assets/img/iconCalendar.svg',
-  'assets/img/diaryPen.png'
-];
+  "index.html",
+  "css/main.css",
+  "assets/img/diaryPen.png",
+  "assets/img/dot.png",
+  "assets/img/headerPoint.png",
+  "assets/img/iconCalendar.svg",
+  "assets/img/iconClock.svg",
+  "assets/img/iconClockCheck.svg",
+  "assets/img/line.png",
+  "assets/img/logoClock-bright.png",
+  "assets/img/logoClock.png",
+  "assets/img/mainIcon.png",
+  "assets/img/pause.png",
+  "assets/img/play.png",
+  "assets/img/title.png",
+  "js/addDBtem.js",
+  "js/d-day.js",
+  "js/layout.js",
+  "js/loadCalendar.js",
+  "js/main.js",
+  "js/time.js",
+  "js/today.js",
+  "js/todo.js",
+  "js/음력.js",
+  "images/Icon.png",
+  "images/Icon_x128.png",
+  "images/Icon_x48.png",
+  "images/Icon_x512.png",
+  "images/screenshot1.png",
+  "images/screenshot2.png",
+  "images/screenshot3.png",
+  "images/screenshot4.png",
+  "images/screenshot5.png"
+]
  
 //서비스워커 설치 (웹자원 캐싱)
 self.addEventListener("install",function(event){
