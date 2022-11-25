@@ -59,7 +59,7 @@ self.addEventListener("activate",function(event){
             return caches.delete(cacheName);
             /*
             //새로운 newCacheList의 아이템이 기존 캐시에 없을 경우 -1반환
-            
+            ------------------------------
              배열.indexOf('찾을문자)
               - 찾을 문자가 배열 내에 몇번째에 있는지 반환
               - 배열에 찾을 문자가 없으면 -1 반환
